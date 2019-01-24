@@ -1,0 +1,37 @@
+<div class="container">
+  <p>-----------cockpit</p>
+<app-cockpit 
+(serverCreated)="onServerAdded($event)"
+(bpCreated)="onBlueprintAdded($event)"
+></app-cockpit>
+<p>-----------cockpit</p>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+
+      <button (click)="OnChangeFirst()">Change First Elemnt</button>
+      <button (click)="OnDestryFirst()">Destoy! Elemnt</button>
+     
+      <app-server-element 
+     *ngFor="let serverElement of serverElements"
+     [srvElement]="serverElement"
+     [name]="serverElement.name"
+     
+     >
+
+     <p #contentParagraph>hola</p>
+    
+    
+
+    </app-server-element> 
+    
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+serverElements = array lleno
+serverElement = nombre otorgado en el ngFor al item en serverElements
+srvElement = Nombre Alias de la Clase [element]
+-->
